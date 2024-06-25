@@ -1355,52 +1355,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864307636}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &877245067
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 877245069}
-  - component: {fileID: 877245068}
-  m_Layer: 0
-  m_Name: TouchController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &877245068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877245067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c151148b547769149a4312e960372204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bookSelect:
-  - {fileID: 157812316}
---- !u!4 &877245069
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 877245067}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &935158616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,6 +2006,67 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
   m_PrefabInstance: {fileID: 2143621129}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3820069122185847288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3513195862442210508, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_Name
+      value: TouchController
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5076140720984745600, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7188428671321763434, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
+      propertyPath: bookSelect.Array.data[0]
+      value: 
+      objectReference: {fileID: 157812316}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 92b3ea5190d6dea41a8450ade39c6587, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2062,4 +2077,4 @@ SceneRoots:
   - {fileID: 1415084441}
   - {fileID: 157812313}
   - {fileID: 743549018}
-  - {fileID: 877245069}
+  - {fileID: 3820069122185847288}
