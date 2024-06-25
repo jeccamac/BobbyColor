@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c9a1bd4e623b243a4f9e0b6a50241e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookId: 1
 --- !u!4 &409363116
 Transform:
   m_ObjectHideFlags: 0
@@ -639,8 +640,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectPage: {fileID: 172284469}
-  bookSelect: []
-  bookList: []
+  bookShelf:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bookList:
+  - {fileID: 1634571261}
+  - {fileID: 2143621131}
   activeBook: 0
 --- !u!222 &685129456
 CanvasRenderer:
@@ -1377,7 +1383,7 @@ GameObject:
   - component: {fileID: 982585983}
   - component: {fileID: 982585982}
   m_Layer: 5
-  m_Name: SelectBook_Button
+  m_Name: SelectBook_Btn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1442,11 +1448,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 982585983}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &982585983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,6 +2004,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548312158}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1634571261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 829827519}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4446b7192d8bf914ebaf797b64fe8b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1795965075
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,6 +2178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c9a1bd4e623b243a4f9e0b6a50241e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookId: 2
 --- !u!4 &1912048930
 Transform:
   m_ObjectHideFlags: 0
@@ -2598,6 +2628,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 22443772, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
   m_PrefabInstance: {fileID: 2143621129}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2143621131 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 11415212, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
+  m_PrefabInstance: {fileID: 2143621129}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4446b7192d8bf914ebaf797b64fe8b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3558304664845440887
 PrefabInstance:
   m_ObjectHideFlags: 0

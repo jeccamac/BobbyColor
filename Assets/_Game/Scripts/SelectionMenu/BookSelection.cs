@@ -8,12 +8,12 @@ public class BookSelection : MonoBehaviour
     [Header("Active Panels")]
     [SerializeField] private SelectPage selectPage = null;
 
-    [Header("Book Select")]
-    [Tooltip("Book game object to animate and open")]
-    [SerializeField] private GameObject[] bookSelect = {};
+    [Tooltip("Book game object to animate open")]
+    [Header("Book Shelf")]
+    [SerializeField] private GameObject[] bookShelf = {};
 
-    [Header("Book List")]
     [Tooltip("Book UI with page contents")]
+    [Header("Book List")]
     [SerializeField] public Book[] bookList = {};
     [SerializeField] public int activeBook = 0;
 
@@ -30,13 +30,15 @@ public class BookSelection : MonoBehaviour
 
     public void BookSelect(int bookNo)
     {
-        //update what book was selected
-        activeBook = bookNo;
-        for (int i = 0; i < bookSelect.Length; i++)
+        Debug.Log("book number id " + bookNo);
+        activeBook = bookNo; //update what book was selected
+        OpenActiveBook(activeBook); //open the book according to the bookID
+
+        for (int i = 0; i < bookShelf.Length; i++)
         {
-            bookSelect[i].SetActive(false); //disable book displays
+            bookShelf[i].SetActive(false); //disable book shelf display
         }
-        OpenActiveBook(activeBook);
+
         Debug.Log("selected book " + activeBook);
     }
     public void OpenActiveBook(int bookID)
@@ -47,8 +49,10 @@ public class BookSelection : MonoBehaviour
             switch (bookID)
             {
                 case 0:
-                //play idle animations here?
-                Debug.Log("No book selected");
+                bookList[bookID].gameObject.SetActive(true);
+                selectPage.gameObject.SetActive(true); //enable select page panel
+                selectPage.GetBook(bookID); //(in SelectPage Panel) with corresponding book selection
+                Debug.Log("Book " + bookList[0].name + " selected");
                 break;
 
                 case 1:
