@@ -7,7 +7,6 @@ public class SelectBook : MonoBehaviour
 {
     private Animator animator;
     private bool isSelected;
-    [SerializeField] public UnityEvent invokeMethod;
     
     private void Start() 
     {
