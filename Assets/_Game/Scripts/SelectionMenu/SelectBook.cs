@@ -1,39 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SelectBook : MonoBehaviour
 {
     private Animator animator;
     private bool isSelected;
-
+    [SerializeField] public UnityEvent invokeMethod;
+    
     private void Start() 
     {
-        animator = this.gameObject.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
-
     public void PickBook()
     {
-        if (isSelected)
+        if (animator != null)
         {
-            isSelected = false;
-            //deselect animation
-            if (animator != null)
+            if (isSelected)
             {
-                animator.Play("deselect");
-            }
+                isSelected = false;
+                //deselect animation
+                if (animator != null)
+                {
+                    animator.Play("deselect");
+                }
 
-            //enable buttons
-        } else if (!isSelected)
-        {
-            isSelected = true;
-            //select animation
-            if (animator != null)
+                //enable buttons
+            } else if (!isSelected)
             {
-                animator.Play("select");
-            }
+                isSelected = true;
+                //select animation
+                if (animator != null)
+                {
+                    animator.Play("select");
+                }
 
-            //enable buttons
+                //enable buttons
+            }
         }
     }
 }

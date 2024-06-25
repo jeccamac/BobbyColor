@@ -35,10 +35,9 @@ public class TouchController : MonoBehaviour
                 {
                     if (bookSelect != null)
                     {
-                        for (int i=0; i<bookSelect.Length; i++)
-                        {
-                            bookSelect[i].PickBook();
-                        }
+                        //temp variable to get access to the one specific object
+                        var bookPick = hit.transform.GetComponent<SelectBook>(); 
+                        bookPick.PickBook(); //call this function only from the ^one object we hit
                     }
                 }
             }
