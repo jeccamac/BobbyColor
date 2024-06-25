@@ -5,6 +5,7 @@ using UnityEngine;
 public class SelectBook : MonoBehaviour
 {
     private Animator animator;
+    private bool isSelected;
 
     private void Start() 
     {
@@ -13,11 +14,26 @@ public class SelectBook : MonoBehaviour
 
     public void PickBook()
     {
-        Debug.Log("tap on book");
-        if (animator != null)
+        if (isSelected)
         {
-            animator.Play("select");
-            Debug.Log("play select animation");
+            isSelected = false;
+            //deselect animation
+            if (animator != null)
+            {
+                animator.Play("deselect");
+            }
+
+            //enable buttons
+        } else if (!isSelected)
+        {
+            isSelected = true;
+            //select animation
+            if (animator != null)
+            {
+                animator.Play("select");
+            }
+
+            //enable buttons
         }
     }
 }
