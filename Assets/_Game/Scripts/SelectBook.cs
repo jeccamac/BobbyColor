@@ -8,15 +8,15 @@ public class SelectBook : MonoBehaviour
 
     private void Start() 
     {
-        animator = GetComponent<Animator>();
+        animator = this.gameObject.GetComponent<Animator>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void PickBook()
     {
         Debug.Log("tap on book");
         if (animator != null)
         {
-            animator.Play("Select");
+            animator.Play("select");
             Debug.Log("play select animation");
         }
     }
