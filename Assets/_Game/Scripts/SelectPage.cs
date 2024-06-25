@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class SelectPage : MonoBehaviour
 {
     [Header("Book Object")]
-    [SerializeField] private SelectBook selectBook;
-    [SerializeField] private int _activeBook;
+    [SerializeField] private BookSelection selectBook;
     [SerializeField] private Book currentBook = null;
 
     [Header("Buttons")]
@@ -18,33 +17,27 @@ public class SelectPage : MonoBehaviour
     [SerializeField] private int leftPage;
     [SerializeField] private int rightPage;
 
-    private void Start() 
-    {
-        _activeBook = selectBook.activeBook;
-        //get book array
-        GetBook();
-    }
-
-    private void GetBook()
+    public void GetBook(int book)
     {
         if (currentBook == null)
         {
             //get current book from active book
-            switch (_activeBook)
+            switch (book)
             {
                     case 0:
-                        Debug.Log("nothing selected");
+                    Debug.Log("nothing selected");
                     break;
 
                     case 1:
-                    currentBook = selectBook.books[1];
+                    currentBook = selectBook.bookList[1];
+
                     Debug.Log("what is " + currentBook.name);
                     //get current book page
                     GetPage();
                     break;
 
                     case 2:
-                    currentBook = selectBook.books[2];
+                    currentBook = selectBook.bookList[2];
                     Debug.Log("what is " + currentBook.name);
                     //get current book page
                     GetPage();
