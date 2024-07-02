@@ -6,17 +6,17 @@ using UnityEngine.UI;
 
 public class SelectBook : MonoBehaviour
 {
+    [SerializeField] public BookID bookID;
     private Animator animator;
     private bool isSelected;
-    [SerializeField] public int bookId;
-    private GameObject selectBook;
-    private Button selectBookBtn;
+    private GameObject selectBtn;
+    private Button continueBtn;
     private BookSelection bookSelection;
     private void Start() 
     {
         bookSelection = GameObject.Find("BookSelection").GetComponent<BookSelection>();
-        selectBook = GameObject.Find("SelectBook_Btn");
-        selectBookBtn = selectBook.GetComponent<Button>();
+        selectBtn = GameObject.Find("SelectBook_Btn");
+        continueBtn = selectBtn.GetComponent<Button>();
         animator = GetComponent<Animator>();
     }
     public void PickBook()
@@ -35,7 +35,7 @@ public class SelectBook : MonoBehaviour
                     animator.Play("deselect");
                 }
 
-                selectBookBtn.interactable = false;
+                continueBtn.interactable = false;
             } else if (!isSelected)
             {
                 isSelected = true;
@@ -44,18 +44,35 @@ public class SelectBook : MonoBehaviour
                 {
                     animator.Play("select");
                 }
-                Debug.Log("book id " + bookId);
+
+                // save book id
+                switch (bookID)
+                {
+                    case BookID.Book1:
+                    DataManager.Instance.SaveBookID(bookID, this);
+                    break;
+
+                    case BookID.Book2:
+                    DataManager.Instance.SaveBookID(bookID, this);
+                    break;
+
+                    case BookID.Book3:
+                    DataManager.Instance.SaveBookID(bookID, this);
+                    break;
+
+                    default:
+                    break;
+                }
+
+                //TO DO test book id attached to button
+                //connect bookID to button to BookSelection
+                //bookSelection.BookSelect(bookId);
+
+
+                Debug.Log("book id " + bookID.ToString());
                 //enable button
-                selectBookBtn.interactable = true;
+                continueBtn.interactable = true;
             }
         }
-    }
-
-    public void SetBookID(int buttonId) //<--------- TO DO need a data manager and enums to save ids like this
-    {
-        //test book id attached to button
-        Debug.Log("continue with book Id " + buttonId + " selection");
-        //connect bookID to button to BookSelection
-        //bookSelection.BookSelect(bookId);
     }
 }

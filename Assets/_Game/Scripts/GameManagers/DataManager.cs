@@ -12,6 +12,12 @@ public class DataManager : MonoBehaviour
     public static SceneLoader SceneLoader => Instance._sceneLoader;
     public string level {get; set;} //current level room
 
+    [Header("Book Selection Settings")]
+    [SerializeField] public GameObject[] _bookList = {};
+    public BookID _currentBookID;
+    public SelectBook _currentBook;
+    public Animator _currentBookAnim;
+
     private void Awake()
     {
         // Singleton pattern, should only be one of these instances on the DataManager prefab
@@ -40,6 +46,48 @@ public class DataManager : MonoBehaviour
                 return Room.PaintBoard;
             default:
                 return Room.None;
+        }
+    }
+
+    public void SaveBookID(BookID bookID, SelectBook book)
+    {
+        _currentBookID = bookID;
+        _currentBook = book;
+        Debug.Log("book selected is " + bookID.ToString());
+    }
+
+    public void OpenBook()
+    {
+        Debug.Log("current book id is " + _currentBookID.ToString());
+        Debug.Log("open this book " + _currentBook.ToString());
+
+        // TO DO make coroutines to display books
+        //animation to open book
+        _currentBookAnim = _currentBook.gameObject.GetComponent<Animator>();
+        _currentBookAnim.Play("open");
+
+        //TO DO after opening book (wait for seconds), open book UI with switch statement
+        
+        for (int i=0; i<_bookList.Length; i++)
+        {
+            switch(_currentBookID)
+            {
+                case BookID.Book1:
+                _bookList[0].SetActive(true); // make this active
+                // TO DO leave the rest deactivated
+                Debug.Log(_bookList[0].ToString() + " book UI is now active");
+                break;
+
+                case BookID.Book2:
+                _bookList[1].SetActive(true);
+                Debug.Log(_bookList[1].ToString() + " book UI is now active");
+                break;
+
+                case BookID.Book3:
+                _bookList[2].SetActive(true);
+                Debug.Log(_bookList[2].ToString() + " book UI is now active");
+                break;
+            }
         }
     }
 }
