@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -48,16 +49,16 @@ public class SelectBook : MonoBehaviour
                 // save book id
                 switch (bookID)
                 {
+                    case BookID.Book0:
+                    DataManager.Instance.SaveBookID(0, this);
+                    break;
+
                     case BookID.Book1:
-                    DataManager.Instance.SaveBookID(bookID, this);
+                    DataManager.Instance.SaveBookID(1, this);
                     break;
 
                     case BookID.Book2:
-                    DataManager.Instance.SaveBookID(bookID, this);
-                    break;
-
-                    case BookID.Book3:
-                    DataManager.Instance.SaveBookID(bookID, this);
+                    DataManager.Instance.SaveBookID(2, this);
                     break;
 
                     default:

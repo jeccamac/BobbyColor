@@ -133,7 +133,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2592179646129451963, guid: a194aa6abf4cea34987f805d0f24e863, type: 3}
   m_PrefabInstance: {fileID: 3558304664845440887}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 999922294}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99c9a1bd4e623b243a4f9e0b6a50241e, type: 3}
@@ -350,60 +350,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 302701601}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &382128732
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 382128734}
-  - component: {fileID: 382128733}
-  m_Layer: 0
-  m_Name: TransitionManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &382128733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382128732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466a9eb5c1b096945bd350d5866ce635, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fadeToBlack: {fileID: 0}
-  _raycastBlock: {fileID: 0}
-  _currentScene: 
-  _room1: 
-  _room2: 
-  _optionalRoom3: 
-  _fadeIn: 1
-  _fadeInDelay: 1
-  _fadeOut: 1
-  _fadeOutDelay: 1
---- !u!4 &382128734
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382128732}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397131892 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
@@ -1465,6 +1411,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sceneLoader: {fileID: 0}
+  _bookShelf:
+  - {fileID: 999922294}
+  - {fileID: 409363111}
+  - {fileID: 1912048925}
   _bookList:
   - {fileID: 397131892}
   - {fileID: 1013823571}
@@ -1620,6 +1570,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982585980}
   m_CullTransparentMesh: 1
+--- !u!1 &999922294 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2190661845814106191, guid: a194aa6abf4cea34987f805d0f24e863, type: 3}
+  m_PrefabInstance: {fileID: 3558304664845440887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1013823571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 180032, guid: fe9bfb5044c0cc646baba1ad7d354100, type: 3}
@@ -2474,7 +2429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c9a1bd4e623b243a4f9e0b6a50241e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bookID: 3
+  bookID: 0
 --- !u!4 &1912048930
 Transform:
   m_ObjectHideFlags: 0
@@ -3084,4 +3039,3 @@ SceneRoots:
   - {fileID: 3820069122185847288}
   - {fileID: 939328219}
   - {fileID: 950826492}
-  - {fileID: 382128734}
